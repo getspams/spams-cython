@@ -1,13 +1,13 @@
 # cyspams
-This package exposes convenient interfaces of some functions from the `SPArse Modeling Software (SPAMS)` C++ library, allowing them to be used from `Cython` code by releasing the Python Global Interpreter Lock (GIL)
+This package exposes convenient interfaces of some functions from the `SPArse Modeling Software (SPAMS)` C++ library, allowing them to be used from `Cython` code while releasing the Python Global Interpreter Lock (GIL)
 
 ## Installation from PyPI
-```Shell
-pip install cyspams
+```bash
+pip install spams-cython
 ```
 
 ## Installation from source
-```Shell
+```bash
 git clone https://github.com/getspams/spams-cython.git
 cd spams-cython
 pip install .
@@ -15,16 +15,16 @@ pip install .
 
 ## Use `cyspams` into your project
 ### pyproject.toml
-```TOML
+```toml
 [build-system]
 requires = [
     "setuptools",
     "Cython",
-    "cyspams"
+    "spams-cython"
 ]
 ```
 ### setup.py
-```Python
+```python
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 import cyspams
@@ -38,8 +38,8 @@ extensions = [
 
 setup(ext_modules=cythonize(extensions))
 ```
-### your_module.pyx
-```Cython
+### mymodule.pyx
+```cython
 from cyspams.interfaces cimport nnls, lasso
 ```
 
@@ -48,11 +48,8 @@ from cyspams.interfaces cimport nnls, lasso
 > To build your project with `cyspams` you need to have a BLAS/LAPACK library on your system (e.g. OpenBLAS, Intel MKL)
 
 ## Exposed functions
-
----
-
 ### `nnls`
-```
+```cython
 void nnls(const double *A, const double *y, const int m, const int n, double *x, double &rnorm)
 ```
 __Args in__:\
@@ -68,7 +65,7 @@ __rnorm__ → Squared Euclidean norm of the final residual vector
 ---
 
 ### `lasso`
-```
+```cython
 void lasso(double *A, double *y, const int m, const int p, const int n, double *x)
 void lasso(double *A, double *y, const int m, const int p, const int n, double *x, const double lambda1, const double lambda2)
 void lasso(double *A, double *y, const int m, const int p, const int n, double *x, const double lambda1, const double lambda2, const int mode, const bint pos)
