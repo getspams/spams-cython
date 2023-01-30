@@ -1,33 +1,3 @@
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
-
-[project]
-name = "cyspams"
-version = "1.0.0"
-description = "SPArse Modeling Software (SPAMS) interfaces for Cython"
-readme = "README.md"
-requires-python = ">=3.7"
-license = {text = ""} # NOTE open bug https://github.com/pypi/warehouse/issues/12392
-# authors = []
-# maintainers = []
-# keywords = []
-# classifiers = []
-dependencies = ["importlib-metadata; python_version<'3.8'"]
-
-[project.urls]
-Homepage = "https://github.com/getspams/spams-cython"
-Documentation = "https://github.com/getspams/spams-cython/blob/main/README.md"
-Source = "https://github.com/getspams/spams-cython"
-# Changelog = "https://github.com/getspams/spams-cython/blob/main/CHANGELOG.md"
-# Download = "https://pypi.org/project/cyspams"
-Tracker = "https://github.com/getspams/spams-cython/issues"
-
-[tool.setuptools]
-platforms = [
-    "Windows",
-    "MacOS",
-    "Linux"
-]
-packages = ["cyspams"]
-include-package-data = true
