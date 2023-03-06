@@ -1,13 +1,13 @@
 # cyspams
-This package exposes convenient interfaces of some functions from the `SPArse Modeling Software (SPAMS)` C++ library, allowing them to be used from `Cython` code while releasing the Python Global Interpreter Lock (GIL)
+This package exposes convenient interfaces of some functions of the `SPArse Modeling Software (SPAMS)` C++ library, allowing them to be used from Cython code by releasing the Python Global Interpreter Lock (GIL)
 
 ## Installation from PyPI
-```bash
-pip install spams-cython
+```Shell
+pip install cyspams
 ```
 
 ## Installation from source
-```bash
+```Shell
 git clone https://github.com/getspams/spams-cython.git
 cd spams-cython
 pip install .
@@ -15,12 +15,12 @@ pip install .
 
 ## Use `cyspams` into your project
 ### pyproject.toml
-```toml
+```TOML
 [build-system]
 requires = [
     "setuptools",
     "Cython",
-    "spams-cython"
+    "cyspams"
 ]
 ```
 ### setup.py
@@ -31,7 +31,8 @@ import cyspams
 
 extensions = [
     Extension(
-        ...,
+        mymodule,
+        sources['mymodule.pyx'],
         include_dirs=cyspams.get_include()
     )
 ]
@@ -63,7 +64,6 @@ __x__ → Solution vector '_x = (n)_'\
 __rnorm__ → Squared Euclidean norm of the final residual vector
 
 ---
-
 ### `lasso`
 ```cython
 void lasso(double *A, double *y, const int m, const int p, const int n, double *x)
