@@ -1,0 +1,24 @@
+name: Build sdist adn wheel
+run-name: Build - ${{ github.sha }}
+on: push
+jobs:
+  build:
+    name: sdist and wheel
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+
+      - name: Build sdist and wheel
+        run: |
+          pip install -U build
+          python -m build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: sdist
+          path: ./dist/*
+          if-no-files-found: error
+
+# TODO: add auto upload on PyPi
