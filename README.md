@@ -1,9 +1,9 @@
-# cyspams
+# spams-cython
 This package exposes convenient interfaces of some functions of the `SPArse Modeling Software (SPAMS)` C++ library, allowing them to be used from Cython code by releasing the Python Global Interpreter Lock (GIL)
 
 ## Installation from PyPI
 ```Shell
-pip install cyspams
+pip install spams-cython
 ```
 
 ## Installation from source
@@ -13,14 +13,14 @@ cd spams-cython
 pip install .
 ```
 
-## Use `cyspams` into your project
+## Use `spams-cython` into your project
 ### pyproject.toml
 ```TOML
 [build-system]
 requires = [
     "setuptools",
     "Cython",
-    "cyspams"
+    "spams-cython"
 ]
 ```
 ### setup.py
@@ -46,7 +46,7 @@ from cyspams.interfaces cimport nnls, lasso
 
 > **Note**
 >
-> To build your project with `cyspams` you need to have a BLAS/LAPACK library on your system (e.g. OpenBLAS, Intel MKL)
+> To build your project with `spams-cython` you need to have a BLAS/LAPACK library on your system (e.g. OpenBLAS, Intel MKL)
 
 ## Exposed functions
 ### `nnls`
