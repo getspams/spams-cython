@@ -1,10 +1,13 @@
 /**
  * @file interfaces.h
- * Interfaces for NNLS and LASSO (SPAMS) solvers
  * 
+ * @brief Interfaces for NNLS and LASSO (SPAMS) solvers
+ * 
+ * @author Clorindo Notte
+ * clorindo.notte@univr.it
  * Diffusion Imaging and Connectivity Estimation (DICE) lab
  * 
- * @date 29/11/2022
+ * @date 2023-03
 */
 
 #ifndef INTERFACES_H

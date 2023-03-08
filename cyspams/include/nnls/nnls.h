@@ -1,12 +1,14 @@
 /**
  * @file nnls.h
- * C++ implementation of the Non-Negative Least Squares (NNLS) algorithm
+ * @brief C++ implementation of the Non-Negative Least Squares (NNLS) algorithm
  * Based on the Fortran code in:
  * LAWSON, Charles L.; HANSON, Richard J. Solving least squares problems. Society for Industrial and Applied Mathematics, 1995.
  * 
+ * @author Clorindo Notte
+ * clorindo.notte@univr.it
  * Diffusion Imaging and Connectivity Estimation (DICE) lab
  * 
- * @date 29/11/2022
+ * @date 2023-03
 */
 
 #ifndef NNLS_H
